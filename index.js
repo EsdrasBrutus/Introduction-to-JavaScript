@@ -17,7 +17,8 @@ Do the following:
 
    HINT: no function required
 */
-
+  let votingAge = 18;
+  return votingAge
 
 
 /*
@@ -31,7 +32,11 @@ Do the following:
    HINT: no function required
 */
 
-
+var first = 'second';
+let second ='third';
+if (second == 'third'){
+  var first = 'fourth'
+}
 
 
 
@@ -46,6 +51,9 @@ Do the following:
    HINT: look up the Number method
 */
 
+let year ="1999"
+Number(year)
+console.log(Number(year))
 
 
 
@@ -58,10 +66,9 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-    /*add your code here*/
+  function multiply(num1, num2){
+    return (num1 * num2);
   }
-
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -74,8 +81,8 @@ Do the following:
    3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-    /*add your code here*/
+function dogYears(age){
+    return (age * 7)
 }
 
 
@@ -151,8 +158,9 @@ Using the miles function below do the following:
   3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-    /*add your code here*/
+function miles(km){
+    let m = 0.621371;
+    return km * m;
   }
 
 
@@ -165,8 +173,9 @@ Using the feet function below do the following:
   3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-    /*add your code here*/
+function feet(cm){
+    let feet = 0.0328084;
+    return cm *feet;
   }
  
 
@@ -181,9 +190,11 @@ Using the annoyingSong function below do the following:
       "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
-        /*add your code here*/
+function annoyingSong(bottles){
+  for (let i = bottles; i > 0; i--){
+    return console.log(i +' ' + "bottles of soda on the wall," +' '+ i + ' '+ "bottles of soda, take one down pass it around"+' ' + (i-1) +' '+ "bottles of soda on the wall")
   }
+}
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -201,10 +212,24 @@ Using the grade function below do the following:
    below should return 'you got an F'
 */
   
-function grade(/*Your Code here */){
-  /*Your Code here */
+
+function grade(x){
+  if ((x >= 90 && x <= 100)){
+    return "A";
   }
-  
+  else if ((x >= 80 && x <= 89)){
+    return "B";
+  }
+  else if ((x >= 70 && x <= 100)){
+    return "C";
+  }
+  else if ((x >= 60 && x <= 69)){
+    return "D";
+  }
+  else if (x <= 59){
+    return "F"
+  }
+}
   
 
 /*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
@@ -222,6 +247,21 @@ Using the vowelCounter function below do the following:
 
 function vowelCounter(/*add your code here*/) {
     /*add your code here*/
+}
+
+function vowelCounter (str1)
+{
+  var vowel_list = 'aeiouAEIOU';
+  var count = 0;
+  
+  for(var i = 0; i < str1.length ; i++)
+  {
+    if (vowel_list.indexOf(str1[i]) !== -1)
+    {
+      count += 1;
+    }
+  }
+  return count;
 }
 
 
