@@ -18,7 +18,13 @@ Do the following:
    HINT: no function required
 */
   let votingAge = 18;
-  return votingAge
+  if (votingAge >= 18){
+    console.log(true)
+  }
+  else{
+    console.log(false)
+  }
+ 
 
 
 /*
@@ -114,9 +120,34 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-    /*add your code here*/
+function hungryDog(age, weight){
+  if (age >= 1){
+    if ( weight <= 5 ){
+     return (0.05 * weight)
+    }
+    else if ( weight >= 6 && weight <=10 ){
+      return (0.04 * weight)
+    } 
+    else if ( weight >= 11 && weight <=15 ){
+      return (0.03 * weight)
+    } 
+    else if ( weight >= 15 ){
+      return (0.02 * weight)
+    } 
   }
+
+  else if (age < 1){
+    if (age >= (2/12) && age <= (4/12) ){
+      return (0.10 * weight)
+    }
+    else if ( age >= (5/12) && age <= (7/12) ){
+     return (0.05 * weight)
+    }
+    else if ( age >= (8/12) && age <= (11/12) ){
+     return (0.04 * weight)
+    }
+  }
+}
 
 
 
@@ -140,10 +171,32 @@ Use the game function below to do the following:
   
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
+let computer = Math.floor(Math.random()*3)
 
 function game(user, computer){
-    /*add your code here*/
-}
+    if (computer == 0){
+      var computer = 'rock'
+    }
+    else if (computer == 1){
+      var computer = 'paper'
+    }
+    else if (computer == 2){
+      var computer = 'scissors'
+    };
+
+    if (user == computer){
+      return "it's a tie"
+    };
+
+    if (user == 'rock' && computer == 'scissors'||user == 'paper' && computer == 'rock'||user == 'scissors' && computer == 'paper'){
+      return "you win!"
+    }
+
+    else if( user == 'rock' && computer == 'paper'||user == 'scissors' && computer == 'rock'||user == 'paper' && computer == 'scissors'){
+      return "you lose!"
+    };
+
+game('rock', computer);
   
   
 
@@ -174,8 +227,8 @@ Using the feet function below do the following:
 */
 
 function feet(cm){
-    let feet = 0.0328084;
-    return cm *feet;
+    let feet = 0.032808398950131;
+    return cm / 30.48;
   }
  
 
@@ -192,9 +245,10 @@ Using the annoyingSong function below do the following:
 
 function annoyingSong(bottles){
   for (let i = bottles; i > 0; i--){
-    return console.log(i +' ' + "bottles of soda on the wall," +' '+ i + ' '+ "bottles of soda, take one down pass it around"+' ' + (i-1) +' '+ "bottles of soda on the wall")
+     return `${i} bottles of soda on the wall, ${i} bottles of soda, take one down pass it around ${i - 1} bottles of soda on the wall`
+    }
   }
-}
+
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -215,19 +269,19 @@ Using the grade function below do the following:
 
 function grade(x){
   if ((x >= 90 && x <= 100)){
-    return "A";
+    return "you got an A";
   }
   else if ((x >= 80 && x <= 89)){
-    return "B";
+    return "you got a B";
   }
   else if ((x >= 70 && x <= 100)){
-    return "C";
+    return "you got a C";
   }
   else if ((x >= 60 && x <= 69)){
-    return "D";
+    return "you got a D";
   }
   else if (x <= 59){
-    return "F"
+    return "you got an F"
   }
 }
   
@@ -243,11 +297,6 @@ Using the vowelCounter function below do the following:
   HINT - you may need to study tomorrow's content on arrays 
   HINT - try looking up the .includes() method
 */
-
-
-function vowelCounter(/*add your code here*/) {
-    /*add your code here*/
-}
 
 function vowelCounter (str1)
 {
@@ -282,4 +331,5 @@ export default{
     feet,
     annoyingSong,
     grade
+}
 }
